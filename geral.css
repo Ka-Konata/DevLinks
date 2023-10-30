@@ -1,0 +1,148 @@
+@font-face {
+    font-family: "Inter";
+    src: url(source/font/Inter-VariableFont_slnt\,wght.ttf);
+}
+
+* {
+    margin: none;
+    padding: none;
+    font-family: "Inter", Arial;
+
+    --bg-desktop-url: url(source/bg-desktop.jpg);
+    --border-color: rgba(255, 255, 255, 0.5);
+    --font-color: rgba(255, 255, 255);
+    --div-bg-color: rgba(255, 255, 255, 0.05);
+    --div-bg-color-hover: rgba(255, 255, 255, 0.1);
+    --botao-dia-noite: white;
+    --botao-dia-noite-imt-url: url(source/MoonStars.svg);
+}
+
+.margin-auto {
+    margin: 10px auto;
+}
+
+.no-top-bottom-margin {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+body {
+    background: var(--bg-desktop-url);
+    color: white;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+
+    width: 300px;
+    margin: 40px auto 0px auto;
+
+    /* border: 1px solid red; */
+}
+
+section {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+
+section#nome-e-foto div {
+    margin: auto;
+    text-align: center;
+    /* border: 1px solid blue; */
+}
+
+section#nome-e-foto img {
+    width: 75px;
+    border: 2px solid black;
+    border-radius: 50px;
+}
+
+section#nome-e-foto p {
+    margin: 8px 0;
+}
+
+
+section#botao-dia-noite button {
+    background-color: var(--div-bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 15px;
+
+    height: 20px;
+    width: 50px;
+}
+
+section#botao-dia-noite button span {
+    display: inline-block;
+    background-color: var(--botao-dia-noite);
+    background-image: var(--botao-dia-noite-imt-url);
+    border-radius: 50px;
+    height: 30px;
+    width: 30px;
+
+    position: relative;
+    transform: translateY(0%);
+    bottom: 50%;
+}
+
+section#links div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+}
+
+section#links a {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+    width: 100%;
+    height: 50px;
+    color: var(--font-color);
+    background-color: var(--div-bg-color);
+    border: 1px solid var(--border-color);
+    margin: 10px 0;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.4s;
+}
+
+section#links a:hover {
+    background-color: var(--div-bg-color-hover);
+    border-color: var(--font-color);
+}
+
+section#redes-sociais div {
+    display: flex;
+}
+
+section#redes-sociais div a {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+    /* border: 1px solid green; */
+    border-radius: 50px;
+    margin: 0 8px;
+    width: 40px;
+    height: 40px;
+    transition: all 0.5s;
+}
+
+section#redes-sociais div a:hover {
+    background: var(--div-bg-color-hover);
+}
+
+
+section#redes-sociais div a ion-icon {
+    display: flex;
+    flex-direction: row;
+
+    color: var(--font-color);
+    display: inline-block;
+}
