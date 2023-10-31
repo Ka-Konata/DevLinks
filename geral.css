@@ -17,7 +17,6 @@
     --botao-dia-noite-img-url: url(source/MoonStars.svg);
 }
 
-
 .light-mode { 
     --bg-desktop-url: url(source/bg-desktop-light.jpg);
     --border-color: rgba(0, 0, 0, 0.5);
