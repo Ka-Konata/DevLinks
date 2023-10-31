@@ -4,8 +4,8 @@
 }
 
 * {
-    margin: none;
-    padding: none;
+    margin: 0;
+    padding: 0;
     font-family: "Inter", Arial;
 
     --bg-desktop-url: url(source/bg-desktop.jpg);
@@ -14,7 +14,23 @@
     --div-bg-color: rgba(255, 255, 255, 0.05);
     --div-bg-color-hover: rgba(255, 255, 255, 0.1);
     --botao-dia-noite: white;
-    --botao-dia-noite-imt-url: url(source/MoonStars.svg);
+    --botao-dia-noite-img-url: url(source/MoonStars.svg);
+}
+
+
+.light-mode { 
+    --bg-desktop-url: url(source/bg-desktop-light.jpg);
+    --border-color: rgba(0, 0, 0, 0.5);
+    --font-color: rgba(0, 0, 0);
+    --div-bg-color: rgba(0, 0, 0, 0.05);
+    --div-bg-color-hover: rgba(0, 0, 0, 0.1);
+    --botao-dia-noite: white;
+    --botao-dia-noite-img-url: url(source/Sun.svg);
+    color: var(--font-color);
+}
+
+section#botao-dia-noite button > span.light-mode {
+    left: 20%;
 }
 
 .margin-auto {
@@ -27,7 +43,8 @@
 }
 
 body {
-    background: var(--bg-desktop-url);
+    background: var(--bg-desktop-url) no-repeat top center/cover;
+    height: calc(100vh - 40px);
     color: white;
 }
 
@@ -56,7 +73,7 @@ section#nome-e-foto div {
 
 section#nome-e-foto img {
     width: 75px;
-    border: 2px solid black;
+    border: 2px solid var(--border-color);
     border-radius: 50px;
 }
 
@@ -72,19 +89,37 @@ section#botao-dia-noite button {
 
     height: 20px;
     width: 50px;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
-section#botao-dia-noite button span {
-    display: inline-block;
-    background-color: var(--botao-dia-noite);
-    background-image: var(--botao-dia-noite-imt-url);
+section#botao-dia-noite button > span {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 50px;
+    height: 50px;
+    width: 50px;
+
+    position: relative;
+    transform: translateY(0%);
+    bottom: 90%;
+    left: -20%;
+
+    transition: all 0.2s;
+}
+
+section#botao-dia-noite button > span:hover {
+    background: var(--div-bg-color-hover);
+}
+
+section#botao-dia-noite button > span > span {
+    display: flex;
+    background: var(--botao-dia-noite-img-url) var(--botao-dia-noite) no-repeat center;
     border-radius: 50px;
     height: 30px;
     width: 30px;
 
-    position: relative;
-    transform: translateY(0%);
-    bottom: 50%;
 }
 
 section#links div {
@@ -105,7 +140,7 @@ section#links a {
     color: var(--font-color);
     background-color: var(--div-bg-color);
     border: 1px solid var(--border-color);
-    margin: 10px 0;
+    margin-bottom: 20px;
     border-radius: 8px;
     text-decoration: none;
     transition: all 0.4s;
@@ -128,7 +163,7 @@ section#redes-sociais div a {
 
     /* border: 1px solid green; */
     border-radius: 50px;
-    margin: 0 8px;
+    margin: 0 3px;
     width: 40px;
     height: 40px;
     transition: all 0.5s;
@@ -145,4 +180,29 @@ section#redes-sociais div a ion-icon {
 
     color: var(--font-color);
     display: inline-block;
+}
+
+section#rodape p {
+    font-size: 14px;
+}
+
+@media screen and (max-width: 700px) {
+    * {
+        --bg-desktop-url: url(source/bg-mobile.jpg);
+    }
+
+    .light-mode {
+        --bg-desktop-url: url(source/bg-mobile-light.jpg);
+    }
+}
+
+@media screen and (max-width: 350px) {
+    main {
+        width: 100vw;
+        align-items: center;
+    }
+
+    section {
+        width: 90%;
+    }
 }
